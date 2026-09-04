@@ -1,182 +1,155 @@
-🌍  - AI Powered Environmental Monitoring System
+🌍 A Resilient AI-Powered Environmental Monitoring Network
 
 📌 Problem Statement
 
-India faces increasing environmental risks such as floods, forest fires, air pollution, and gas leaks.
-Traditional systems react only after damage occurs.
-
-This project aims to build a resilient, AI-powered environmental monitoring network that provides:
-
-- Early detection
-- Localized intelligence
-- Real-time alerts
-
-This helps shift from reactive response → proactive prevention.
+A resilient, AI-powered environmental monitoring network that provides early detection, localized intelligence, and actionable alerts for floods, forest fires, pollution events, and other environmental hazards common in India, enabling authorities and communities to shift from reactive disaster response to proactive risk prevention.
 
 ---
 
 💡 Solution Overview
 
-The system is a low-cost IoT system using ESP32 and multiple sensors to continuously monitor environmental conditions.
+The system is a distributed IoT system that uses Edge AI, Agentic AI, and LoRa-based communication to monitor environmental conditions in real time.
 
-The system:
+Each node operates independently with local intelligence, ensuring the system works even in low-connectivity or remote areas.
 
-- Collects real-time data
-- Analyzes conditions
-- Detects hazards early
-- Sends alerts using GSM
+---
+
+🧠 Core Technologies Used
+
+⚡ Edge AI
+
+- Data is processed directly on the ESP32 device
+- Enables real-time decision making
+- Reduces dependency on internet/cloud
+
+---
+
+🤖 Agentic AI
+
+- Analyses multi-sensor data
+- Verifies abnormal readings
+- Reduces false alarms
+- Takes autonomous decisions (alert triggering)
+
+---
+
+📡 LoRa Communication
+
+- Long-range, low-power communication
+- Enables mesh network between nodes
+- Works without internet in rural areas
 
 ---
 
 ⚙️ Step-by-Step Working
 
-Step 1: Data Collection
+1️⃣ Data Collection
 
-Sensors continuously collect environmental data:
+Multiple sensors continuously monitor:
 
-- Temperature
-- Humidity
-- Air quality
-- Gas levels
-- Water level
-- Fire detection
-- Movement/Vibration
+- Temperature, humidity, pressure (BME680)
+- Air quality & gas (MQ-135)
+- Vibration & tilt (MPU6050)
+- Water level (Ultrasonic HC-SR04)
+- Fire detection (Flame sensor)
 
 ---
 
-Step 2: Data Processing
+2️⃣ Edge Processing (ESP32-S3)
 
-ESP32 microcontroller receives all sensor data and processes it.
-
-- Converts raw signals into usable values
-- Checks threshold conditions
-- Filters abnormal noise
+- Sensor data is collected via GPIO pins
+- Noise filtering & baseline comparison applied
+- Data converted into meaningful parameters
 
 ---
 
-Step 3: Intelligent Analysis
+3️⃣ Intelligent Analysis (Agentic AI)
 
-System compares multiple sensor values to avoid false alarms.
-
-Example:
-
-- Gas + Temperature ↑ → Possible hazard
-- Water level ↑ → Flood warning
-- Flame detected → Fire alert
+- Multi-sensor validation performed
+- Cross-checking to avoid false alerts
+- Pattern-based hazard detection
 
 ---
 
-Step 4: Risk Detection
+4️⃣ Communication Layer
 
-If any dangerous condition is detected:
-
-- System identifies it as a hazard
-- Prepares alert message
-
----
-
-Step 5: Alert System
-
-GSM module sends SMS alerts to:
-
-- Authorities
-- Local users
-
-Optional:
-
-- Buzzer / LED alert
+- LoRa used for node-to-node data transmission
+- Data sent to gateway node
+- Works without internet connectivity
 
 ---
 
-🧠 System Flow
+5️⃣ Alert System
 
-Sensors → ESP32 → Data Processing → Risk Detection → GSM Alert
+- GSM module sends SMS alerts 📩
+
+- Alerts sent to:
+  
+  - Authorities
+  - Nearby users
+
+- Local alarm (buzzer/LED) activated
+
+---
+
+🔄 System Architecture
+
+Sensor Nodes → Edge AI Processing → LoRa Mesh Network → Gateway → GSM Alert System
 
 ---
 
 🧩 Sensors Used
 
-🌡️ BME680
-
-- Temperature
-- Humidity
-- Pressure
-- Air Quality
-
----
-
-📡 MPU6050
-
-- Vibration
-- Movement
-- Tilt detection
+- BME680 → Temperature, Humidity, Pressure, Air Quality
+- MPU6050 → Vibration, Movement, Tilt
+- MQ-135 → Gas & Pollution Detection
+- Ultrasonic (HC-SR04) → Water Level Detection
+- Flame Sensor → Fire Detection
 
 ---
 
-🌫️ MQ-135
+🚨 Key Features
 
-- Gas detection
-- Air pollution monitoring
-
----
-
-🌊 Ultrasonic Sensor (HC-SR04)
-
-- Water level detection
-- Distance measurement
+- Distributed sensor network
+- Works without internet (LoRa + GSM)
+- Real-time hazard detection
+- Reduced false alarms using AI
+- Scalable for smart cities & rural areas
+- Energy-efficient and low-cost
 
 ---
 
-🔥 Flame Sensor
-
-- Fire detection
-- Flame presence
-
----
-
-🚨 Features
-
-- Real-time monitoring
-- Multi-sensor accuracy
-- Early hazard detection
-- Instant SMS alerts
-- Low-cost implementation
-- Works in remote areas
+📸 Project Images
+"Sensor Setup" (setup.png)
+"System Diagram" (diagram.png)
+"Sensor Setup" (images/setup.png)
+"Output" (output.png)
 
 ---
 
-📸 System Diagram
+📂 Project Structure
 
-- diagram. png
-- setup. png
-- output. png
-
----
-
-📂 Project Files
-
-- esp32_code.ino → Main controller code
+- esp32_code.ino → Edge processing logic
 - gsm_alert.cpp → SMS alert system
-- README.md → Project documentation
-
+- README.md → Documentation
+- images/ → Diagrams & outputs
 
 ---
 
-🚀 Future Improvements
+🚀 Future Scope
 
-- AI/ML-based prediction
-- Mobile app integration
-- Cloud dashboard
+- Cloud dashboard integration
+- Mobile app for live alerts
+- AI-based disaster prediction
 - Satellite communication support
+- Solar-powered autonomous nodes
 
 ---
 
 🎯 Conclusion
 
-Bhoomi Rakshak provides a smart, scalable, and affordable solution for environmental safety.
-
-It enables early detection and timely alerts, helping reduce disaster impact and improve public safety.
+The system is a resilient and scalable environmental monitoring solution that combines Edge AI, Agentic AI, and LoRa communication to enable early detection and proactive disaster prevention.
 
 ---
 
-⭐ Building a safer environment through smart technology
+⭐ Towards a safer, smarter, and disaster-resilient India
