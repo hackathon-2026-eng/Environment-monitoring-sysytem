@@ -1,0 +1,27 @@
+#include <Wire.h>
+
+int gasSensor = 34;
+int flameSensor = 35;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(gasSensor, INPUT);
+  pinMode(flameSensor, INPUT);
+}
+
+void loop() {
+  int gas = analogRead(gasSensor);
+  int flame = digitalRead(flameSensor);
+
+  Serial.print("Gas: ");
+  Serial.println(gas);
+
+  Serial.print("Flame: ");
+  Serial.println(flame);
+
+  if (gas > 3000 || flame == LOW) {
+    Serial.println("⚠️ Hazard Detected!");
+  }
+
+  delay(2000);
+}
