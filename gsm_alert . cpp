@@ -1,0 +1,19 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial gsm(16, 17);
+
+void setup() {
+  gsm.begin(9600);
+  delay(1000);
+
+  gsm.println("AT+CMGF=1");
+  delay(1000);
+
+  gsm.println("AT+CMGS=\"+91XXXXXXXXXX\"");
+  delay(1000);
+
+  gsm.print("Alert! Hazard detected!");
+  gsm.write(26);
+}
+
+void loop() {}
