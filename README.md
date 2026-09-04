@@ -120,9 +120,11 @@ Sensor Nodes → Edge AI Processing → LoRa Mesh Network → Gateway → GSM Al
 ---
 
 📸 Project Images
-"Sensor Setup" (setup.png)
+
 "System Diagram" (diagram.png)
-"Sensor Setup" (images/setup.png)
+
+"Sensor Setup" (setup.png)
+
 "Output" (output.png)
 
 ---
@@ -132,7 +134,7 @@ Sensor Nodes → Edge AI Processing → LoRa Mesh Network → Gateway → GSM Al
 - esp32_code.ino → Edge processing logic
 - gsm_alert.cpp → SMS alert system
 - README.md → Documentation
-- images/ → Diagrams & outputs
+
 
 ---
 
